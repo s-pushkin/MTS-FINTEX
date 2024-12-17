@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BookingMapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-17T13:34:27" hostname="LYNX" time="34.722">
+  <properties/>
+  <testcase name="bookingTest()" classname="BookingMapTest" time="34.722"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[дек. 17, 2024 4:34:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 130; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+</testsuite>
