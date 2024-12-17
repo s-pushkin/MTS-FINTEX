@@ -8,26 +8,43 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookingTest {
+    @BeforeAll
+    static void setUp(){
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
     @Test
     public void bookingTestAnt()  {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+        mainPage();
+        setTownName("Анталья");
+        sleep(2000);
+        buttonClick();
+        sleep(2000);
+        checkText();
+        sleep(2000);
+        setRating();
+        sleep(2000);
+        checkRating();
+        sleep(2000);
+    }
+
+    public void mainPage(){
         open("https://www.booking.com/");
-        $("input[name='ss']").setValue("Анталья");
-
-        sleep(2000);
-
+    }
+    public void setTownName(String Town){
+        $("input[name='ss']").setValue(Town);
+    }
+    public void buttonClick(){
         $x("//button[@type='submit' and contains(@class, 'a83ed08757')]").click();
-
-        sleep(2000);
-
+    }
+    public void checkText(){
         $("h1.f6431b446c").shouldHave(Condition.text("Анталья"));
-
-        sleep(2000);
-
+    }
+    public void setRating(){
         $("[data-filters-item='class:class=5'] input").click();
+    }
 
-        sleep(2000);
-
+    public void checkRating(){
         ElementsCollection ratingElements = $$("[data-testid='rating-stars']");
 
         for (int i = 0; i < ratingElements.size(); i++) {
@@ -41,9 +58,6 @@ public class BookingTest {
             assertEquals(5, stars, "Количество звезд не соответствует!");
 
         }
-
-        sleep(2000);
-
     }
 }
 
