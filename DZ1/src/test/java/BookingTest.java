@@ -1,14 +1,16 @@
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookingTest {
     private static final int sleepTime = 2000;
+    private MainPage mainPage = new MainPage();
+    private SearchResultPage searchResultsPage = new SearchResultPage();
+    private Filters filters = new Filters();
+    private HotelCard hotelCard = new HotelCard();
+
 
     @BeforeAll
     static void setUp(){
@@ -16,49 +18,20 @@ public class BookingTest {
     }
     @Test
     public void bookingTestAnt()  {
-        mainPage();
-        setTownName("Анталья");
+        mainPage.openMainPage();
+        mainPage.setTownName("Анталья");
         sleep(sleepTime);
-        buttonClick();
+
+        searchResultsPage.clickSearchButton();
         sleep(sleepTime);
-        checkText();
+        searchResultsPage.checkPageTitle("Анталья");
         sleep(sleepTime);
-        setRating();
+
+        filters.applyRatingFilter();
         sleep(sleepTime);
-        checkRating();
+
+        hotelCard.checkHotelRatings();
         sleep(sleepTime);
-    }
-
-    public void mainPage(){
-        open("https://www.booking.com/");
-    }
-    public void setTownName(String Town){
-        $("input[name='ss']").setValue(Town);
-    }
-    public void buttonClick(){
-        $x("//button[@type='submit' and contains(@class, 'a83ed08757')]").click();
-    }
-    public void checkText(){
-        $("h1.f6431b446c").shouldHave(Condition.text("Анталья"));
-    }
-    public void setRating(){
-        $("[data-filters-item='class:class=5'] input").click();
-    }
-
-    public void checkRating(){
-        ElementsCollection ratingElements = $$("[data-testid='rating-stars']");
-
-        for (int i = 0; i < ratingElements.size(); i++) {
-            String starsText = ratingElements.get(i)
-                    .parent()
-                    .shouldBe(Condition.visible)
-                    .attr("aria-label");
-
-            int stars = Integer.parseInt(starsText.split(" ")[0]);
-
-            assertEquals(5, stars, "Количество звезд не соответствует!");
-
-        }
     }
 }
 
