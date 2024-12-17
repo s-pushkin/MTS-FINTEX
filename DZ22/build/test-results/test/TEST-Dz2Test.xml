@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Dz2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-16T19:45:45" hostname="LYNX" time="26.878">
+<testsuite name="Dz2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-17T07:42:54" hostname="LYNX" time="28.866">
   <properties/>
-  <testcase name="bookingTestAnt()" classname="Dz2Test" time="26.878"/>
+  <testcase name="bookingTest()" classname="Dz2Test" time="28.866"/>
   <system-out><![CDATA[Оценка 8,4
 8,4
-Название отеля: Angelis
-Количество звезд: 4
-Оценка: 8,4
-Количество отзывов: 2163 отзыва
-Стоимость: 11 989 руб.
 ]]></system-out>
-  <system-err><![CDATA[дек. 16, 2024 10:45:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[дек. 17, 2024 10:42:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 130; Please update to a Selenium version that supports CDP version 131
 ]]></system-err>
 </testsuite>
