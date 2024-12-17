@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Dz2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-17T07:42:54" hostname="LYNX" time="28.866">
+<testsuite name="Dz2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-17T08:58:18" hostname="LYNX" time="31.601">
   <properties/>
-  <testcase name="bookingTest()" classname="Dz2Test" time="28.866"/>
-  <system-out><![CDATA[Оценка 8,4
-8,4
-]]></system-out>
-  <system-err><![CDATA[дек. 17, 2024 10:42:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <testcase name="bookingTest()" classname="Dz2Test" time="31.601"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[дек. 17, 2024 11:58:20 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 130; Please update to a Selenium version that supports CDP version 131
 ]]></system-err>
 </testsuite>
