@@ -14,18 +14,18 @@ public class BookingTest {
     }
     @Test
     public void bookingTestAnt()  {
-
+        int sleepTime = 2000;
         mainPage();
         setTownName("Анталья");
-        sleep(2000);
+        sleep(sleepTime);
         buttonClick();
-        sleep(2000);
+        sleep(sleepTime);
         checkText();
-        sleep(2000);
+        sleep(sleepTime);
         setRating();
-        sleep(2000);
+        sleep(sleepTime);
         checkRating();
-        sleep(2000);
+        sleep(sleepTime);
     }
 
     public void mainPage(){
