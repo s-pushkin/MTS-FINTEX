@@ -1,9 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
