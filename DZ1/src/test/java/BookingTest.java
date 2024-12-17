@@ -8,13 +8,14 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookingTest {
+    private static final int sleepTime = 2000;
+
     @BeforeAll
     static void setUp(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
     @Test
     public void bookingTestAnt()  {
-        int sleepTime = 2000;
         mainPage();
         setTownName("Анталья");
         sleep(sleepTime);
